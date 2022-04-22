@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 
 def tsip(a):
-	plt.clf()
-	plt.style.use('dark_background')
-	png = "{:03d}".format(a)
+	plt.clf() #clear the graph cache
+	plt.style.use('dark_background') 
+	png = "{:03d}".format(a) # 000.png
 	plt.title(png)
 
 	x = a
@@ -21,10 +21,11 @@ def tsip(a):
 			y = y+1
 			xgraph.append(x)
 			ygraph.append(y)
-	plt.plot(ygraph, xgraph,color='blue', linewidth = 2,
-	         marker='o', markerfacecolor='red', markersize=5)
-	plt.savefig(png)
-	print("O número",a,"passou por",y,"operações até chegar no valor 1")
+	plt.plot(ygraph, xgraph,color='blue', linewidth = 2, marker='o', markerfacecolor='red', markersize=5)
+
+	plt.savefig(png) # you can switch this line to plt.show() if you just want to see the graph
+
+	print("The number",a,"has gone through",y,"operations until it reached the value 1")
 
 for i in range(1,1000):
 	tsip(i)
